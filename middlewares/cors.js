@@ -1,4 +1,7 @@
-const allowedCors = ["https://ct0kan-pindie.nomoredomainswork.ru"];
+const allowedCors = [
+    "https://ct0kan-pindie.nomoredomainswork.ru",
+    "http://localhost:3000",
+];
 
 const cors = (req, res, next) => {
     const { origin } = req.headers;
