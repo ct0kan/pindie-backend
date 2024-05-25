@@ -16,7 +16,7 @@ const { sendAllUsers, getUser, deleteUserController } = require('../controllers/
 usersRouter.get('/users', findAllUsers, sendAllUsers);
 usersRouter.get('/users/:id', findUserById, getUser);
 usersRouter.get("/me", checkAuth, getUser);
-usersRouter.post('/users', findAllUsers, checkEmptyNameAndEmailAndPassword, checkAuth, hashPassword, createUser, getUser);
+usersRouter.post('/users', checkEmptyNameAndEmailAndPassword, checkAuth, hashPassword, createUser, getUser);
 usersRouter.put('/users/:id', checkEmptyNameAndEmail, checkAuth, updateUser, getUser);
 usersRouter.delete('/users/:id', checkAuth, deleteUser, deleteUserController);
 

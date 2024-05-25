@@ -42,15 +42,15 @@ const deleteUser = async (req, res, next) => {
 };
 
 const checkEmptyNameAndEmailAndPassword = async (req, res, next) => {
-  const { name, email, password } = req.body;
-  if (name && email && password) {
+  const { username, email, password } = req.body;
+  if (username && email && password) {
     next();
     return;
   }
 
   res.setHeader("Content-Type", "application/json");
 
-  if (!name) {
+  if (!username) {
     res.status(400).send(JSON.stringify({ message: "Не заполнено имя" }));
   }
 
@@ -64,15 +64,15 @@ const checkEmptyNameAndEmailAndPassword = async (req, res, next) => {
 };
 
 const checkEmptyNameAndEmail = async (req, res, next) => {
-  const { name, email } = req.body;
-  if (name && email) {
+  const { username, email } = req.body;
+  if (username && email) {
     next();
     return;
   }
 
   res.setHeader("Content-Type", "application/json");
 
-  if (!name) {
+  if (!username) {
     res.status(400).send(JSON.stringify({ message: "Не заполнено имя" }));
   }
 

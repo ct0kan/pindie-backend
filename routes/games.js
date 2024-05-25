@@ -17,7 +17,7 @@ const { sendAllGames, getGame, deleteGameController } = require('../controllers/
 
 gamesRouter.get('/games', findAllGames, sendAllGames);
 gamesRouter.get('/games/:id', findGameById, getGame);
-gamesRouter.post('/games', findAllGames, checkIfGameExists, checkEmptyFields, checkAuth, createGame, getGame);
+gamesRouter.post('/games', findAllGames, checkIfGameExists, checkIfCategoriesAvaliable, checkEmptyFields, checkAuth, createGame, getGame);
 gamesRouter.put(
     '/games/:id',
     findGameById,
