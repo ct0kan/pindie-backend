@@ -24,7 +24,7 @@ const findGameById = async (req, res, next) => {
       .populate("categories")
       .populate({
         path: "users",
-        select: ".password"
+        select: "-password"
       });
   next();
   } catch (error) {
